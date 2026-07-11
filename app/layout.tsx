@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
@@ -8,7 +7,6 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  // Update here: Added viewport fit to cover the notch area
   viewportFit: 'cover', 
 };
 
@@ -17,7 +15,6 @@ export const metadata: Metadata = {
   description: 'EspressoPro Management System',
   appleWebApp: {
     capable: true,
-    // Update here: Changed to black-translucent for a seamless top edge
     statusBarStyle: 'black-translucent',
     title: 'EspressoPro',
   },
