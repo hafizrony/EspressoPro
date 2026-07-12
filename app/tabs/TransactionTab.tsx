@@ -1,5 +1,4 @@
 // app/tabs/TransactionTab.tsx
-// Update here: Added useEffect
 import { useState, useEffect } from 'react';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../lib/firebase';
@@ -17,10 +16,8 @@ const getLocalDateString = (dateObj: Date) => {
 export default function TransactionTab({ orders }: Props) {
   const [selectedDate, setSelectedDate] = useState(getLocalDateString(new Date()));
   const [visibleTransactions, setVisibleTransactions] = useState(8);
-  // Update here: Added state to store brand name on load
   const [brandName, setBrandName] = useState("EspressoPro");
 
-  // Update here: Fetch brand name once when the component loads
   useEffect(() => {
     const fetchBrand = async () => {
       if (orders.length > 0 && orders[0].uid) {
@@ -97,7 +94,6 @@ export default function TransactionTab({ orders }: Props) {
       </div>
     `).join('') || '';
 
-    // Update here: Added auto-print JavaScript inside the HTML string for better mobile support
     const receiptHTML = `
       <!DOCTYPE html>
       <html>
